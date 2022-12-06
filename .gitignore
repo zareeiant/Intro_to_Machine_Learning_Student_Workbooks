@@ -131,3 +131,9 @@ dmypy.json
 # ._
 .*
 !/.gitignore
+
+# scratch
+/scratch
+
+# student work
+/student_work
