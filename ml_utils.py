@@ -1,17 +1,31 @@
 import pandas as pd
 import numpy as np
 import math
+<<<<<<< HEAD
 import statistics as stats
 import sklearn.datasets
 import ipywidgets as widgets
 import thinkplot
 import thinkstats2
+=======
+import sklearn.datasets
+import ipywidgets as widgets
+
+>>>>>>> 4412eb377d54f166fde14a7e0c45c48130672638
 ##Seaborn for fancy plots. 
 #%matplotlib inline
 import matplotlib.pyplot as plt
 import seaborn as sns
 plt.rcParams["figure.figsize"] = (8,8)
 
+<<<<<<< HEAD
+=======
+def sklearn_to_df(sklearn_dataset):
+    df = pd.DataFrame(sklearn_dataset.data, columns=sklearn_dataset.feature_names)
+    df['target'] = pd.Series(sklearn_dataset.target)
+    return df
+
+>>>>>>> 4412eb377d54f166fde14a7e0c45c48130672638
 class edaDF:
     """
     A class used to perform common EDA tasks
@@ -70,17 +84,24 @@ class edaDF:
     fullEDA()
         Displays the full EDA process. 
     """
+<<<<<<< HEAD
     def __init__(self, data, target, answer):
 
         self.data = data
         self.target = target
         self.answer=answer
+=======
+    def __init__(self, data, target):
+        self.data = data
+        self.target = target
+>>>>>>> 4412eb377d54f166fde14a7e0c45c48130672638
         self.cat = []
         self.num = []
 
     def info(self):
         return self.data.info()
 
+<<<<<<< HEAD
     def describe(self):
         for col in self.num:
             print(col)
@@ -93,6 +114,8 @@ class edaDF:
             print(self.data[col].value_counts())
             print('\n \n')
 
+=======
+>>>>>>> 4412eb377d54f166fde14a7e0c45c48130672638
     def giveTarget(self):
         return self.target
         
@@ -102,6 +125,7 @@ class edaDF:
     def setNum(self, numList):
         self.num = numList
 
+<<<<<<< HEAD
     def missing_values(self): 
         for col in self.num:
             print(col)
@@ -111,6 +135,8 @@ class edaDF:
             print('\n \n')
             
 
+=======
+>>>>>>> 4412eb377d54f166fde14a7e0c45c48130672638
     def countPlots(self, splitTarg=False, show=True):
         n = len(self.cat)
         cols = 2
@@ -150,6 +176,7 @@ class edaDF:
             figure.show()
         return figure
 
+<<<<<<< HEAD
 
     def regplot(self, show=True):
         n = len(self.num)
@@ -221,10 +248,14 @@ class edaDF:
 
     def fullEDA(self, answer):
         
+=======
+    def fullEDA(self):
+>>>>>>> 4412eb377d54f166fde14a7e0c45c48130672638
         out1 = widgets.Output()
         out2 = widgets.Output()
         out3 = widgets.Output()
         out4 = widgets.Output()
+<<<<<<< HEAD
         out5 = widgets.Output()
         out6 = widgets.Output()
         out7 = widgets.Output()
@@ -245,6 +276,13 @@ class edaDF:
         tab.set_title(8, 'Missing value')
         tab.set_title(9, 'Pairplot')
         tab.set_title(10, 'Regplot')
+=======
+
+        tab = widgets.Tab(children = [out1, out2, out3])
+        tab.set_title(0, 'Info')
+        tab.set_title(1, 'Categorical')
+        tab.set_title(2, 'Numerical')
+>>>>>>> 4412eb377d54f166fde14a7e0c45c48130672638
         display(tab)
 
         with out1:
@@ -257,6 +295,7 @@ class edaDF:
         with out3:
             fig3 = self.histPlots(kde=True, show=False)
             plt.show(fig3)
+<<<<<<< HEAD
         with out4:
             self.find_outliers_IQR()
         with out5:
@@ -282,3 +321,5 @@ class edaDF:
             plt.show(fig7)
 
  
+=======
+>>>>>>> 4412eb377d54f166fde14a7e0c45c48130672638
