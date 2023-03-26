@@ -149,3 +149,5 @@ model_path/
 /logs
 /model_path
 back/
+kt_out/
+kt_out
