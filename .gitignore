@@ -151,3 +151,5 @@ model_path/
 back/
 kt_out/
 kt_out
+aclImdb
+aclImdb/
